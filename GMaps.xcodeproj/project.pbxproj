@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,8 @@
 		A15ECC6426D104C700922F8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A15ECC6226D104C700922F8C /* Main.storyboard */; };
 		A15ECC6626D104DD00922F8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A15ECC6526D104DD00922F8C /* Assets.xcassets */; };
 		A15ECC6926D104DD00922F8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A15ECC6726D104DD00922F8C /* LaunchScreen.storyboard */; };
+		A15ECC7A26D9639200922F8C /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15ECC7926D9639200922F8C /* Coordinate.swift */; };
+		A15ECC7D26D9646D00922F8C /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15ECC7C26D9646C00922F8C /* RealmService.swift */; };
 		C724C84995D99BD7186DEDC6 /* Pods_GMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FCEDEFCBE8951797F046DFE /* Pods_GMaps.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		A15ECC6526D104DD00922F8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A15ECC6826D104DD00922F8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A15ECC6A26D104DD00922F8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A15ECC7926D9639200922F8C /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		A15ECC7C26D9646C00922F8C /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		BD9E311D057A8F7AD3D3BF98 /* Pods-GMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GMaps.debug.xcconfig"; path = "Target Support Files/Pods-GMaps/Pods-GMaps.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +82,8 @@
 				A15ECC6526D104DD00922F8C /* Assets.xcassets */,
 				A15ECC6726D104DD00922F8C /* LaunchScreen.storyboard */,
 				A15ECC6A26D104DD00922F8C /* Info.plist */,
+				A15ECC7926D9639200922F8C /* Coordinate.swift */,
+				A15ECC7C26D9646C00922F8C /* RealmService.swift */,
 			);
 			path = GMaps;
 			sourceTree = "<group>";
@@ -88,7 +94,6 @@
 				BD9E311D057A8F7AD3D3BF98 /* Pods-GMaps.debug.xcconfig */,
 				164654DD897D33D50EB84771 /* Pods-GMaps.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -104,6 +109,7 @@
 				A15ECC5626D104C700922F8C /* Frameworks */,
 				A15ECC5726D104C700922F8C /* Resources */,
 				69BBD2DBC2B3B931D59D41DE /* [CP] Copy Pods Resources */,
+				1173BCE9E4E29CC3D15A34B6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -160,6 +166,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1173BCE9E4E29CC3D15A34B6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GMaps/Pods-GMaps-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GMaps/Pods-GMaps-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GMaps/Pods-GMaps-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		24ABD5505E03929800F78F31 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -209,6 +232,8 @@
 				A15ECC6126D104C700922F8C /* ViewController.swift in Sources */,
 				A15ECC5D26D104C700922F8C /* AppDelegate.swift in Sources */,
 				A15ECC5F26D104C700922F8C /* SceneDelegate.swift in Sources */,
+				A15ECC7A26D9639200922F8C /* Coordinate.swift in Sources */,
+				A15ECC7D26D9646D00922F8C /* RealmService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
