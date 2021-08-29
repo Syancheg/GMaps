@@ -9,12 +9,18 @@
 /* Begin PBXBuildFile section */
 		A15ECC5D26D104C700922F8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15ECC5C26D104C700922F8C /* AppDelegate.swift */; };
 		A15ECC5F26D104C700922F8C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15ECC5E26D104C700922F8C /* SceneDelegate.swift */; };
-		A15ECC6126D104C700922F8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15ECC6026D104C700922F8C /* ViewController.swift */; };
+		A15ECC6126D104C700922F8C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15ECC6026D104C700922F8C /* MainViewController.swift */; };
 		A15ECC6426D104C700922F8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A15ECC6226D104C700922F8C /* Main.storyboard */; };
 		A15ECC6626D104DD00922F8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A15ECC6526D104DD00922F8C /* Assets.xcassets */; };
 		A15ECC6926D104DD00922F8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A15ECC6726D104DD00922F8C /* LaunchScreen.storyboard */; };
 		A15ECC7A26D9639200922F8C /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15ECC7926D9639200922F8C /* Coordinate.swift */; };
 		A15ECC7D26D9646D00922F8C /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15ECC7C26D9646C00922F8C /* RealmService.swift */; };
+		A15ECC8526DBC36300922F8C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15ECC8426DBC36300922F8C /* User.swift */; };
+		A15ECC8926DBC4D200922F8C /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15ECC8826DBC4D200922F8C /* AuthViewController.swift */; };
+		A15ECC8C26DBC9AC00922F8C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15ECC8B26DBC9AC00922F8C /* RegisterViewController.swift */; };
+		A15ECC9026DBCC1200922F8C /* StoryboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15ECC8F26DBCC1200922F8C /* StoryboardHelper.swift */; };
+		A15ECC9426DBCCB700922F8C /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15ECC9326DBCCB700922F8C /* BaseRouter.swift */; };
+		A15ECC9826DBD8B800922F8C /* UIWindow+keyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15ECC9726DBD8B800922F8C /* UIWindow+keyWindow.swift */; };
 		C724C84995D99BD7186DEDC6 /* Pods_GMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FCEDEFCBE8951797F046DFE /* Pods_GMaps.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,13 +30,19 @@
 		A15ECC5926D104C700922F8C /* GMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A15ECC5C26D104C700922F8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A15ECC5E26D104C700922F8C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A15ECC6026D104C700922F8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A15ECC6026D104C700922F8C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A15ECC6326D104C700922F8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A15ECC6526D104DD00922F8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A15ECC6826D104DD00922F8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A15ECC6A26D104DD00922F8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A15ECC7926D9639200922F8C /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		A15ECC7C26D9646C00922F8C /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		A15ECC8426DBC36300922F8C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A15ECC8826DBC4D200922F8C /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		A15ECC8B26DBC9AC00922F8C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A15ECC8F26DBCC1200922F8C /* StoryboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardHelper.swift; sourceTree = "<group>"; };
+		A15ECC9326DBCCB700922F8C /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		A15ECC9726DBD8B800922F8C /* UIWindow+keyWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+keyWindow.swift"; sourceTree = "<group>"; };
 		BD9E311D057A8F7AD3D3BF98 /* Pods-GMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GMaps.debug.xcconfig"; path = "Target Support Files/Pods-GMaps/Pods-GMaps.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,17 +87,71 @@
 		A15ECC5B26D104C700922F8C /* GMaps */ = {
 			isa = PBXGroup;
 			children = (
+				A15ECC9226DBCC9800922F8C /* Router */,
+				A15ECC8E26DBCBD700922F8C /* Helper */,
+				A15ECC8326DBC32F00922F8C /* Service */,
+				A15ECC8226DBC31200922F8C /* Controller */,
+				A15ECC8126DBC30B00922F8C /* View */,
+				A15ECC8026DBC30100922F8C /* Model */,
 				A15ECC5C26D104C700922F8C /* AppDelegate.swift */,
 				A15ECC5E26D104C700922F8C /* SceneDelegate.swift */,
-				A15ECC6026D104C700922F8C /* ViewController.swift */,
-				A15ECC6226D104C700922F8C /* Main.storyboard */,
 				A15ECC6526D104DD00922F8C /* Assets.xcassets */,
-				A15ECC6726D104DD00922F8C /* LaunchScreen.storyboard */,
 				A15ECC6A26D104DD00922F8C /* Info.plist */,
-				A15ECC7926D9639200922F8C /* Coordinate.swift */,
-				A15ECC7C26D9646C00922F8C /* RealmService.swift */,
 			);
 			path = GMaps;
+			sourceTree = "<group>";
+		};
+		A15ECC8026DBC30100922F8C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A15ECC7926D9639200922F8C /* Coordinate.swift */,
+				A15ECC8426DBC36300922F8C /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A15ECC8126DBC30B00922F8C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A15ECC6226D104C700922F8C /* Main.storyboard */,
+				A15ECC6726D104DD00922F8C /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A15ECC8226DBC31200922F8C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A15ECC6026D104C700922F8C /* MainViewController.swift */,
+				A15ECC8826DBC4D200922F8C /* AuthViewController.swift */,
+				A15ECC8B26DBC9AC00922F8C /* RegisterViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A15ECC8326DBC32F00922F8C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A15ECC7C26D9646C00922F8C /* RealmService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		A15ECC8E26DBCBD700922F8C /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A15ECC8F26DBCC1200922F8C /* StoryboardHelper.swift */,
+				A15ECC9726DBD8B800922F8C /* UIWindow+keyWindow.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		A15ECC9226DBCC9800922F8C /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				A15ECC9326DBCCB700922F8C /* BaseRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		A5B04D2680589E864D73CFB0 /* Pods */ = {
@@ -229,9 +295,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A15ECC6126D104C700922F8C /* ViewController.swift in Sources */,
+				A15ECC9026DBCC1200922F8C /* StoryboardHelper.swift in Sources */,
+				A15ECC6126D104C700922F8C /* MainViewController.swift in Sources */,
 				A15ECC5D26D104C700922F8C /* AppDelegate.swift in Sources */,
+				A15ECC8526DBC36300922F8C /* User.swift in Sources */,
+				A15ECC8C26DBC9AC00922F8C /* RegisterViewController.swift in Sources */,
+				A15ECC8926DBC4D200922F8C /* AuthViewController.swift in Sources */,
 				A15ECC5F26D104C700922F8C /* SceneDelegate.swift in Sources */,
+				A15ECC9426DBCCB700922F8C /* BaseRouter.swift in Sources */,
+				A15ECC9826DBD8B800922F8C /* UIWindow+keyWindow.swift in Sources */,
 				A15ECC7A26D9639200922F8C /* Coordinate.swift in Sources */,
 				A15ECC7D26D9646D00922F8C /* RealmService.swift in Sources */,
 			);
