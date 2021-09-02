@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  GMaps
 //
 //  Created by Константин Кузнецов on 21.08.2021.
@@ -9,10 +9,11 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     
     @IBOutlet weak var mapView: GMSMapView!
-    @IBOutlet weak var trackButton: UIBarButtonItem!
+    @IBOutlet weak var trackButton: UIButton!
+    @IBOutlet weak var pathButton: UIButton!
     
     private let locationManager = CLLocationManager()
     
@@ -24,8 +25,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = false
         setupLocationManager()
-        setupRoute()
+        setupButtons()
     }
     
     func checkLocationStatus(){
@@ -43,10 +45,9 @@ class ViewController: UIViewController {
         }
     }
     
-    func addMarker(at coordinate: CLLocationCoordinate2D) {
-        
-        let marker = GMSMarker(position: coordinate)
-        marker.map = mapView
+    private func setupButtons(){
+        trackButton.layer.cornerRadius = 10
+        pathButton.layer.cornerRadius = 10
     }
     
     private func setupLocationManager(){
@@ -57,12 +58,17 @@ class ViewController: UIViewController {
     }
     
     // MARK: - Action
+    
+    
     @IBAction func trackAction(_ sender: Any) {
         
         checkLocationStatus()
         isTrackingPosition.toggle()
-        trackButton.title = isTrackingPosition ? "Закончить трек" : "Начать новый трек"
-        
+        let buttonTitle = isTrackingPosition ? "Закончить трек" : "Начать новый трек"
+        let backgroundButton = isTrackingPosition ? UIColor.systemRed : UIColor.systemBlue
+        trackButton.setTitle(buttonTitle, for: .normal)
+        trackButton.backgroundColor = backgroundButton
+
         if isTrackingPosition {
             routePath.removeAllCoordinates()
             mapView.clear()
@@ -77,13 +83,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func viewPath(_ sender: Any) {
-        
         if isTrackingPosition {
             alertTracking()
         } else {
             viewLastPath()
         }
     }
+    
+    // MARK: - Alert
     
     func alertTracking(){
         
@@ -93,7 +100,8 @@ class ViewController: UIViewController {
             guard let strongSelf = self else {
                 return
             }
-            strongSelf.trackButton.title = "Начать новый трек"
+            strongSelf.trackButton.setTitle("Начать новый трек", for: .normal)
+            strongSelf.trackButton.backgroundColor = .systemBlue
             strongSelf.isTrackingPosition = false
             strongSelf.locationManager.stopUpdatingLocation()
             strongSelf.mapView.clear()
@@ -139,7 +147,7 @@ class ViewController: UIViewController {
 }
 
     // MARK: - CLLocationManagerDelegate
-extension ViewController: CLLocationManagerDelegate {
+extension MainViewController: CLLocationManagerDelegate {
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         checkLocationStatus()
