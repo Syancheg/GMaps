@@ -20,6 +20,8 @@ class RegisterViewController: UIViewController {
         setupTextFields()
     }
     
+    // MARK: - Setup
+    
     func setupButtons(){
         
         registerButton.layer.cornerRadius = 10
@@ -30,9 +32,11 @@ class RegisterViewController: UIViewController {
         loginTextField.placeholder = "Логин"
         passwordTextField.placeholder = "Пароль"
         passwordTextField.isSecureTextEntry = true
+        passwordTextField.autocorrectionType = .no
     }
     
-
+    // MARK: - Action
+    
     @IBAction func registerButtonAction(_ sender: Any) {
         
         if let login = loginTextField.text,
@@ -47,6 +51,8 @@ class RegisterViewController: UIViewController {
             alertRegister(user: userBase)
         }
     }
+    
+    // MARK: - Alert
     
     func alertRegister(user: User){
         

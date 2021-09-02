@@ -9,7 +9,6 @@ import UIKit
 
 class AuthViewController: UIViewController {
 
-    
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
@@ -39,6 +38,7 @@ class AuthViewController: UIViewController {
         loginTextField.placeholder = "Логин"
         passwordTextField.placeholder = "Пароль"
         passwordTextField.isSecureTextEntry = true
+        passwordTextField.autocorrectionType = .no
     }
     
     

@@ -45,6 +45,8 @@ class MainViewController: UIViewController {
         }
     }
     
+    // MARK: - Setup
+    
     private func setupButtons(){
         trackButton.layer.cornerRadius = 10
         pathButton.layer.cornerRadius = 10
