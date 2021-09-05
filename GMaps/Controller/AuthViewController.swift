@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class AuthViewController: UIViewController {
 
@@ -15,16 +17,38 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet var router: AuthRouter!
     
+    private let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         setupButton()
         setupTextFields()
+        setupObserver()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
         self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    func setupObserver(){
+        Observable.combineLatest(loginTextField.rx.text.asObservable().unwrap(),
+                                 passwordTextField.rx.text.asObservable().unwrap())
+            .map { (userName, password) in
+                userName.count >= AuthConstatns.minLoginLenght && password.count >= AuthConstatns.minPasswordLength
+            }
+            .subscribe(onNext: { [weak self] isValid in
+                self?.activeLoginButton(isValid: isValid)
+            })
+            .disposed(by:disposeBag)
+    }
+    
+    func activeLoginButton(isValid: Bool){
+        
+        loginButton.isEnabled = isValid
+        loginButton.backgroundColor = isValid ? UIColor.systemBlue : UIColor.systemGray
     }
     
     func setupButton(){
