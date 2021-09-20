@@ -21,6 +21,10 @@
 		A15ECC9026DBCC1200922F8C /* StoryboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15ECC8F26DBCC1200922F8C /* StoryboardHelper.swift */; };
 		A15ECC9426DBCCB700922F8C /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15ECC9326DBCCB700922F8C /* BaseRouter.swift */; };
 		A15ECC9826DBD8B800922F8C /* UIWindow+keyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15ECC9726DBD8B800922F8C /* UIWindow+keyWindow.swift */; };
+		A15ECC9B26E1540800922F8C /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15ECC9A26E1540700922F8C /* BlurView.swift */; };
+		A15ECCA826E541E200922F8C /* AuthConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15ECCA726E541E200922F8C /* AuthConstants.swift */; };
+		A15ECCAB26E5457400922F8C /* Observable+unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15ECCAA26E5457300922F8C /* Observable+unwrap.swift */; };
+		A15ECCAE26E5477300922F8C /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15ECCAD26E5477300922F8C /* LocationService.swift */; };
 		C724C84995D99BD7186DEDC6 /* Pods_GMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FCEDEFCBE8951797F046DFE /* Pods_GMaps.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +47,10 @@
 		A15ECC8F26DBCC1200922F8C /* StoryboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardHelper.swift; sourceTree = "<group>"; };
 		A15ECC9326DBCCB700922F8C /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		A15ECC9726DBD8B800922F8C /* UIWindow+keyWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+keyWindow.swift"; sourceTree = "<group>"; };
+		A15ECC9A26E1540700922F8C /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		A15ECCA726E541E200922F8C /* AuthConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConstants.swift; sourceTree = "<group>"; };
+		A15ECCAA26E5457300922F8C /* Observable+unwrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+unwrap.swift"; sourceTree = "<group>"; };
+		A15ECCAD26E5477300922F8C /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		BD9E311D057A8F7AD3D3BF98 /* Pods-GMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GMaps.debug.xcconfig"; path = "Target Support Files/Pods-GMaps/Pods-GMaps.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +95,7 @@
 		A15ECC5B26D104C700922F8C /* GMaps */ = {
 			isa = PBXGroup;
 			children = (
+				A15ECCA626E541BF00922F8C /* Static */,
 				A15ECC9226DBCC9800922F8C /* Router */,
 				A15ECC8E26DBCBD700922F8C /* Helper */,
 				A15ECC8326DBC32F00922F8C /* Service */,
@@ -113,6 +122,7 @@
 		A15ECC8126DBC30B00922F8C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A15ECC9A26E1540700922F8C /* BlurView.swift */,
 				A15ECC6226D104C700922F8C /* Main.storyboard */,
 				A15ECC6726D104DD00922F8C /* LaunchScreen.storyboard */,
 			);
@@ -133,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				A15ECC7C26D9646C00922F8C /* RealmService.swift */,
+				A15ECCAD26E5477300922F8C /* LocationService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -142,6 +153,7 @@
 			children = (
 				A15ECC8F26DBCC1200922F8C /* StoryboardHelper.swift */,
 				A15ECC9726DBD8B800922F8C /* UIWindow+keyWindow.swift */,
+				A15ECCAA26E5457300922F8C /* Observable+unwrap.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -152,6 +164,14 @@
 				A15ECC9326DBCCB700922F8C /* BaseRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		A15ECCA626E541BF00922F8C /* Static */ = {
+			isa = PBXGroup;
+			children = (
+				A15ECCA726E541E200922F8C /* AuthConstants.swift */,
+			);
+			path = Static;
 			sourceTree = "<group>";
 		};
 		A5B04D2680589E864D73CFB0 /* Pods */ = {
@@ -298,11 +318,15 @@
 				A15ECC9026DBCC1200922F8C /* StoryboardHelper.swift in Sources */,
 				A15ECC6126D104C700922F8C /* MainViewController.swift in Sources */,
 				A15ECC5D26D104C700922F8C /* AppDelegate.swift in Sources */,
+				A15ECCAB26E5457400922F8C /* Observable+unwrap.swift in Sources */,
 				A15ECC8526DBC36300922F8C /* User.swift in Sources */,
 				A15ECC8C26DBC9AC00922F8C /* RegisterViewController.swift in Sources */,
+				A15ECC9B26E1540800922F8C /* BlurView.swift in Sources */,
+				A15ECCAE26E5477300922F8C /* LocationService.swift in Sources */,
 				A15ECC8926DBC4D200922F8C /* AuthViewController.swift in Sources */,
 				A15ECC5F26D104C700922F8C /* SceneDelegate.swift in Sources */,
 				A15ECC9426DBCCB700922F8C /* BaseRouter.swift in Sources */,
+				A15ECCA826E541E200922F8C /* AuthConstants.swift in Sources */,
 				A15ECC9826DBD8B800922F8C /* UIWindow+keyWindow.swift in Sources */,
 				A15ECC7A26D9639200922F8C /* Coordinate.swift in Sources */,
 				A15ECC7D26D9646D00922F8C /* RealmService.swift in Sources */,
