@@ -12,6 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     private var blurView: UIVisualEffectView?
+    private let notificationService = NotificationService()
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -44,6 +45,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             blurView = BlurView()
         }
         UIWindow.keyWindow?.rootViewController?.view.addSubview(blurView!)
+        if(notificationService.checkAccess()){
+            notificationService.setupNotification()
+        }
+        
         // Called when the scene will move from an active state to an inactive state.
         // This may occur due to temporary interruptions (ex. an incoming phone call).
     }
