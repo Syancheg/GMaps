@@ -14,14 +14,21 @@ class MainViewController: UIViewController {
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var trackButton: UIButton!
     @IBOutlet weak var pathButton: UIButton!
+    @IBOutlet weak var photoButton: UIButton!
     
     private let locationService = LocationService()
     private let disposeBag = DisposeBag()
+    private let imageService = ImageService()
+    
     
     private var isTrackingPosition = false
     private var routeCoordinate = [CLLocationCoordinate2D]()
     private var route: GMSPolyline?
     private var routePath = GMSMutablePath()
+    private var userPhoto: UIImage?
+    private var marker: GMSMarker?
+    private var imagePickerView: UIImageView?
+    private var avatarView:UIImageView?
     
     override func viewDidLoad() {
         
@@ -29,13 +36,16 @@ class MainViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
         setupLocationManager()
         setupButtons()
+        loadPhoto()
     }
     
     // MARK: - Setup
     
     private func setupButtons(){
+        
         trackButton.layer.cornerRadius = 10
         pathButton.layer.cornerRadius = 10
+        photoButton.layer.cornerRadius = 10
     }
     
     private func setupLocationManager(){
@@ -92,6 +102,11 @@ class MainViewController: UIViewController {
         }
     }
     
+    @IBAction func photoButtonAction(_ sender: UIButton) {
+        
+        viewPickerController()
+    }
+    
     // MARK: - Alert
     
     func alertTracking(){
@@ -126,6 +141,7 @@ class MainViewController: UIViewController {
         mapView.animate(to: position)
         routePath.add(location.coordinate)
         route?.path = routePath
+        addMarker(location: location)
     }
     
     private func savePath(){
@@ -153,5 +169,111 @@ class MainViewController: UIViewController {
         let update = GMSCameraUpdate.fit(bounds)
         mapView.animate(with: update)
     }
+    
+    // MARK: - Avatar
+    
+    private func viewPickerController(){
+        
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else { return }
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .camera
+        imagePickerController.allowsEditing = true
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true)
+    }
+    
+    private func extractImage(from info: [UIImagePickerController.InfoKey: Any]) -> UIImage? {
+        
+        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            return image
+        } else if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            return image
+        } else {
+            return nil
+        }
+    }
+    
+    private func addMarker(location: CLLocation) {
+        
+        self.marker?.map = nil
+        self.marker = nil
+        if imagePickerView == nil {
+            setupImageView()
+        }
+        let marker = GMSMarker(position: location.coordinate)
+        marker.iconView = imagePickerView
+        marker.map = mapView
+        self.marker = marker
+    }
+    
+    private func setupImageView(){
+        
+        if let image = userPhoto {
+            let rect = CGRect(x: 0, y: 0, width: 30, height: 30)
+            let view = UIImageView(frame: rect)
+            view.image = image
+            view.layer.cornerRadius = 15
+            view.layer.borderColor = UIColor.white.cgColor
+            view.layer.borderWidth = 1
+            view.layer.masksToBounds = true
+            imagePickerView = view
+        }
+    }
+
+    private func loadPhoto(){
+        
+        if let image = imageService.getImage() {
+            userPhoto = image
+            viewPhoto()
+        }
+    }
+    
+    private func savePhoto(_ image: UIImage?){
+        
+        if image != nil {
+            imageService.saveImage(image: image!)
+        }
+    }
+    
+    private func viewPhoto(){
+    
+        guard let image = userPhoto else { return }
+        if avatarView == nil{
+            let frame = CGRect(x: UIScreen.main.bounds.width - 110, y: 120, width: 80, height: 80)
+            let imageView = UIImageView(frame: frame)
+            imageView.image = image
+            imageView.layer.cornerRadius = 40
+            imageView.layer.borderColor = UIColor.white.cgColor
+            imageView.layer.borderWidth = 3
+            imageView.layer.masksToBounds = true
+            avatarView = imageView
+            view.addSubview(avatarView!)
+        } else {
+            avatarView!.image = image
+        }
+    }
+}
+
+extension MainViewController: UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
+        picker.dismiss(animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let image = extractImage(from: info)
+        savePhoto(image)
+        imagePickerView = nil
+        userPhoto = image
+        viewPhoto()
+        picker.dismiss(animated: true)
+    }
+    
+}
+
+extension MainViewController: UIImagePickerControllerDelegate {
+    
 }
 

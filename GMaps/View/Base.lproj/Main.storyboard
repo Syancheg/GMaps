@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DxQ-OT-zUt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DxQ-OT-zUt">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -181,7 +182,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="GrV-ji-Bfn">
-                                <rect key="frame" x="15" y="717" width="384" height="115"/>
+                                <rect key="frame" x="15" y="637" width="384" height="195"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92s-Sw-Qdq">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="50"/>
@@ -195,7 +196,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVd-V4-38f">
-                                        <rect key="frame" x="0.0" y="65" width="384" height="50"/>
+                                        <rect key="frame" x="0.0" y="72.5" width="384" height="50"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="txx-Xv-sHs"/>
@@ -205,9 +206,20 @@
                                             <action selector="viewPath:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sOv-kY-cq0"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHl-to-Lv3">
+                                        <rect key="frame" x="0.0" y="145" width="384" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="k5e-V8-Oc8"/>
+                                        </constraints>
+                                        <state key="normal" title="Сделать аватар"/>
+                                        <connections>
+                                            <action selector="photoButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wAy-kN-fCT"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="115" id="aPM-rJ-sLz"/>
+                                    <constraint firstAttribute="height" constant="195" id="aPM-rJ-sLz"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -225,7 +237,8 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="zvF-ge-hZF" id="7Oj-aD-uZ0"/>
-                        <outlet property="pathButton" destination="aVd-V4-38f" id="V8r-5n-cob"/>
+                        <outlet property="pathButton" destination="aVd-V4-38f" id="keL-VU-pcx"/>
+                        <outlet property="photoButton" destination="mHl-to-Lv3" id="OW5-XL-CF4"/>
                         <outlet property="trackButton" destination="92s-Sw-Qdq" id="MtJ-hr-vVi"/>
                     </connections>
                 </viewController>
